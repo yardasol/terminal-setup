@@ -1,6 +1,7 @@
 BRC=$HOME/.bashrc
 
 # Add git branch to prompt
+echo "# Add git branch to prompt" >> $BRC
 echo "parse_git_branch() {" >> $BRC
 echo "  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'" >> $BRC
 echo "}" >> $BRC
@@ -21,6 +22,7 @@ conda install pip -y
 pip3 install --user pywal
 
 # Add local 'pip' to PATH:
+echo '# Add local 'pip' to PATH:' >> $BRC
 echo 'export PATH="${PATH}:${HOME}/.local/bin/"' >> $BRC
 
 # Create colorscheme
