@@ -47,4 +47,4 @@ echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 
 # Install Jekyll and Bundler
-gem install jekyll bundler
+gem install jekyll bundler jekyll-scholar
