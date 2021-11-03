@@ -37,3 +37,14 @@ echo "# Import colorscheme from 'wal' asynchronously
 # Make colorscheme persist on reboot
 echo "# -R restores the last colorscheme that was in use.
 wal -R" >> $HOME/.xinitrc
+
+# Add Ruby Gems
+echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+
+# Source
+source ~/.bashrc
+
+# Install Jekyll and Bundler
+gem install jekyll bundler
