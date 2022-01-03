@@ -32,7 +32,7 @@ wal -i /usr/share/backgrounds/warty-final-ubuntu.png
 echo "# Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)" >> $BRC 
+(cat ~/.cache/wal/sequences &)" >> $BRC
 
 # Make colorscheme persist on reboot
 echo "# -R restores the last colorscheme that was in use.
@@ -48,3 +48,8 @@ source ~/.bashrc
 
 # Install Jekyll and Bundler
 gem install jekyll bundler jekyll-scholar
+
+# setup vimrc
+git clone --depth=1 -b yardasol-custom git@github.com:yardasol/vimrc ~/.vim_runtime
+sh ~/.vim_runtime/install_awesome_vimrc.sh
+bash ~/.vim_runtime/install_yardasol_vimrc.sh
