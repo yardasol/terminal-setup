@@ -8,6 +8,10 @@ echo "}" >> $BRC
 echo "" >> $BRC
 echo 'export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$(parse_git_branch)\[\033[00m\]$ "' >> $BRC
 
+# Get conda working in non-interactive shell
+CONDA_PATH=$(conda info | grep -i 'base environment' | awk '{print $4}')
+source $CONDA_PATH/etc/profile.d/conda.sh
+
 # Install pywal dependencies
 # most of them are already installed
 
@@ -19,7 +23,7 @@ conda config --env --add channels conda-forge
 conda config --env --set pip_interop_enabled True
 conda install pip -y
 
-pip3 install --user pywal
+pip install pywal
 
 # Add local 'pip' to PATH:
 echo '# Add local 'pip' to PATH:' >> $BRC
