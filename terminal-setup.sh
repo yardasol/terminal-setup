@@ -21,13 +21,8 @@ conda activate pywal
 
 conda config --env --add channels conda-forge
 conda config --env --set pip_interop_enabled True
-conda install pip -y
-
+conda install pip
 pip install pywal
-
-# Add local 'pip' to PATH:
-echo '# Add local 'pip' to PATH:' >> $BRC
-echo 'export PATH="${PATH}:${HOME}/.local/bin/"' >> $BRC
 
 # Create colorscheme
 wal -i /usr/share/backgrounds/warty-final-ubuntu.png
